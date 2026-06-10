@@ -16,7 +16,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://io-social-app-frontend.vercel.app/'], credentials: true
+  origin: ['http://localhost:5173', 'https://io-social-app-frontend.vercel.app'], credentials: true
 }));
 app.use(express.json());
 app.use('/api/auth', authRoutes);
@@ -36,7 +36,7 @@ app.get("/",(req,res)=>{
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://io-social-app-frontend.vercel.app/"],
+    origin: ["http://localhost:5173", "https://io-social-app-frontend.vercel.app"],
     methods: ["GET", "POST"]
   }
 });
